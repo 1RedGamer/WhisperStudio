@@ -1,0 +1,43 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# C extensions & dylib builds
+*.o
+*.obj
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# PyInstaller & Build artifacts
+build/
+dist/
+Whisper Studio.app/
+*.dmg
+*.zip
+*.spec.bak
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Application cache & downloaded models
+.cache/
+models/
+huggingface/
+*.m4a
+*.mp3
+*.wav
+*.mp4
+*.mov
