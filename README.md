@@ -3,10 +3,12 @@
 [![Platform](https://img.shields.io/badge/Platform-macOS%2013.0%2B-black?logo=apple)](https://www.apple.com/macos/)
 [![Apple Silicon](https://img.shields.io/badge/Apple%20Silicon-M1%20%2F%20M2%20%2F%20M3%20%2F%20M4%20%2F%20M5-blue?logo=apple)](https://developer.apple.com/metal/)
 [![MLX Acceleration](https://img.shields.io/badge/Engine-MLX%20Whisper-purple)](https://github.com/ml-explore/mlx-examples/tree/main/whisper)
-[![UI Framework](https://img.shields.io/badge/GUI-PyQt6-green?logo=qt)](https://riverbankcomputing.com/software/pyqt/)
+[![Download](https://img.shields.io/badge/Download-Latest%20Release-orange?logo=apple)](https://github.com/1RedGamer/WhisperStudio/releases)
 [![License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
 
 A native, standalone, privacy-first audio and video transcription studio tailored for macOS and heavily optimized for Apple Silicon (Metal GPU and Unified Memory).
+
+**[⬇️ Download Ready-to-Run App (.zip)](https://github.com/1RedGamer/WhisperStudio/releases)**
 
 Transcribes local media files into **Text (.txt)** and **Word (.docx)** documents with near-zero latency, complete offline execution, zero telemetry, and native MacBook Pro Touch Bar integration.
 
@@ -136,6 +138,41 @@ Whisper Studio/
 3. **Dynamic Audio Interception**: Subprocess and stdout streams are intercepted in real time to extract timestamp markers (`--> HH:MM:SS`), providing smooth progress percentage and time estimates.
 4. **Smooth Curved Rendering**: The custom `WhisperProgressBar` employs an antialiased clip path conforming to the pill curvature, eliminating rectangular edge glitches at low percentages.
 5. **Native macOS Menu Integration**: Connects to the macOS Application Menu and top menu bar with checkable language switching and the native Help guide dialog.
+
+---
+
+## 📥 Download Pre-built App (No Terminal Required)
+
+If you don't want to build from source using Python, you can download the ready-to-run macOS application:
+
+1. Go to the **[Releases](https://github.com/1RedGamer/WhisperStudio/releases)** tab on GitHub.
+2. Download the latest `Whisper-Studio-v2.7.0-macOS.zip`.
+3. Double-click to unzip it and move **`Whisper Studio.app`** to your **Applications** folder.
+4. If macOS Gatekeeper shows an *"Unidentified Developer"* alert on the first launch:
+   - Either double-click `Unlock_Whisper.command` included in the project, OR
+   - Right-click (or Control-click) `Whisper Studio.app` in Finder and select **Open** $\rightarrow$ **Open**.
+
+---
+
+## 💡 About this Project & Disclaimer
+
+This project was conceived, ideated, and tested by **Gabriele Clemente ([@1RedGamer](https://github.com/1RedGamer))**.
+
+> **Full Disclosure:**  
+> I am not a professional software engineer or UI/UX designer — I'm a passionate tech enthusiast! This application was architected, written, and built through human-AI pair programming using **Google Antigravity** powered by **Gemini 3.8**.
+> 
+> My primary contribution has been the initial concept, iterative testing, UI/UX conceptual design, feature scoping, and extensive real-world verification on Apple Silicon hardware (including the custom Touch Bar implementation, queue mechanics, bilingual localization, and Metal GPU acceleration).
+> 
+> Because of this, suggestions, code reviews, and Pull Requests to improve the codebase, optimize dependencies, or enhance software architecture are warmly welcomed and appreciated!
+
+---
+
+### ⚖️ Legal & Acknowledgements
+
+- **OpenAI Whisper**: Speech recognition models created by OpenAI, licensed under the MIT License.
+- **Apple MLX**: High-performance machine learning framework developed by Apple Silicon Research, licensed under the MIT License.
+- **FFmpeg**: Multimedia processing handled by static FFmpeg builds.
+- All product names, logos, and brands are property of their respective owners.
 
 ---
 
