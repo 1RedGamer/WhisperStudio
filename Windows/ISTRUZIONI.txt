@@ -1,0 +1,125 @@
+========================================================================
+                          WHISPER STUDIO
+                Studio Edition (v2.7.5) — Windows Edition
+    Trascrizione Audio & Video Offline con Intelligenza Artificiale
+========================================================================
+
+COS'È:
+Un'applicazione professionale autonoma, portatile e completamente privata per
+trascrivere qualsiasi file audio o video in formato Testo (.txt) o Word (.docx).
+Dotata di una splendida interfaccia grafica moderna (PyQt6) allineata alla
+versione macOS (v2.7.5), non richiede account, non ha limiti di durata ed è
+ottimizzata sia per schede video dedicate NVIDIA GeForce RTX / GTX (CUDA) sia
+per processori multithread Intel e AMD.
+
+------------------------------------------------------------------------
+COME AVVIARE IL PROGRAMMA:
+------------------------------------------------------------------------
+Per gli utenti dell'eseguibile standalone portatile:
+▶ Fai doppio clic su WhisperPortable.exe
+
+Per gli sviluppatori / esecuzione da codice sorgente Python:
+▶ python whisper_studio.py
+
+Non occorrono file batch né configurazioni complesse.
+Il Drag & Drop dei file multimediali da Esplora Risorse funziona sempre e fluidamente.
+
+------------------------------------------------------------------------
+DOWNLOAD INTELLIGENTE DEL MODELLO (PRIMA TRASCRIZIONE):
+------------------------------------------------------------------------
+Per mantenere il pacchetto leggero e veloce da condividere:
+1. Al primo avvio della trascrizione, se il modello AI scelto non è ancora
+   presente sul PC nella cache o nella cartella 'models', Whisper Studio si collega
+   a Hugging Face e avvia il download automatico con monitoraggio in tempo reale.
+   - 💎 Alta Fedeltà (Large-v3): scarica ~3.08 GB (massima accuratezza).
+   - ⚡ Alta Velocità (Turbo): scarica ~1.6 GB (fluidissimo e veloce).
+2. Dai successivi utilizzi, il programma funzionerà 100% OFFLINE, senza
+   mai più richiedere alcuna connessione a Internet!
+
+------------------------------------------------------------------------
+FUNZIONALITÀ PRINCIPALI & GUIDA ALL'USO:
+------------------------------------------------------------------------
+1. INTERFACCIA GRAFICA MODERNA SCURA (DARK MODE):
+   • Design speculare alla versione macOS con barre di stato antialiasing,
+     schede reattive e transizioni fluide.
+   • Supporto Bilingue con Bandiere (🇮🇹 Italiano / 🇬🇧 English): cambia la
+     lingua istantaneamente dal menu superiore "Lingua", senza riavviare l'app!
+
+2. CARICAMENTO DEI FILE & RILEVAMENTO DURATA:
+   • Trascina uno o più file audio/video nell'area centrale dell'applicazione
+     (oppure clicca sul pulsante "➕ Aggiungi File").
+   • Ogni file inserito mostra subito nel sottotitolo:
+     - Minutaggio totale esatto (es. ⏱️ 01:12:24)
+     - Peso in MB
+     - Cartella di origine
+
+3. ORDINAMENTO DELLA CODA CON DRAG & DROP DEL MOUSE:
+   • Puoi riordinare liberamente la priorità dei file in attesa:
+     - Clicca con il mouse su una scheda e trascinala su o giù.
+     - La scheda selezionata si evidenzia con bordo VIOLA e una miniatura
+       fluttuante semitrasparente segue fluidamente il cursore.
+     - La posizione di destinazione si illumina con un elegante bordo BLU.
+     - Rilascia il pulsante per confermare la nuova posizione.
+
+4. SELEZIONE MODELLO AUTOMATICA O MANUALE (CON SALVATAGGIO IN MEMORIA):
+   • Modalità Automatica: rileva la presenza o meno di una GPU NVIDIA.
+     - Se rileva una GPU NVIDIA (dai 6 GB di VRAM in su), utilizza la
+       modalità Large-v3 Standard per la massima accuratezza.
+     - Se rileva una GPU AMD o Intel (e quindi deve usare il processore per
+       trascrivere), passa automaticamente alla modalità Large-v3 Turbo.
+   • Modalità Manuale: permette di scegliere liberamente tra Large-v3 Standard
+     e Turbo, con avvisi consigliati in base alla GPU rilevata.
+   • Memoria Impostazioni: la selezione della modalità e del modello rimane
+     in memoria. Se passi in modalità manuale e cambi modello, al riavvio
+     l'app si aprirà già con quelle impostazioni salvate; se ricambi modello
+     lo ricorda, e se torni in automatico si ripristina.
+
+5. NOME FILE AUTOMATICO DEI RISULTATI:
+   • I file trascritti vengono salvati automaticamente nella stessa cartella 
+     del file multimediale d'origine.
+   • Il nome viene ripulito e formattato come:
+     "Trascrizione [data del file in gg-mm-aa - oo.mm].[formato]"
+     (es. Trascrizione 23-09-26 - 10.17.docx)
+   • Anche il documento Word include l'intestazione pulita.
+
+6. CONTROLLI DI ELABORAZIONE:
+   • 🚀 AVVIA TRASCRIZIONE: Elabora sequenzialmente l'intera coda.
+   • ⏸ PAUSA / ▶ RIPRENDI: Mette in pausa l'elaborazione in qualsiasi momento.
+   • ■ ANNULLA: Interrompe la sessione, salva quanto elaborato e libera la memoria.
+
+7. GESTIONE AUTOMATICA DELLA MEMORIA (MEMORY RECLAIM):
+   • Al termine della coda o in caso di stop, l'applicazione espelle il modello
+     dalla memoria liberando istantaneamente il 100% della RAM e VRAM GPU.
+   • Se la memoria video della GPU non è sufficiente, l'app passa in automatico
+     alla CPU multithread per garantire che nessuna trascrizione fallisca.
+
+------------------------------------------------------------------------
+FORMATI SUPPORTATI:
+------------------------------------------------------------------------
+MP3, WAV, M4A, AAC, MP4, MKV, FLAC, OGG, WEBM, AVI, MOV, WMA, ALAC, OPUS.
+
+------------------------------------------------------------------------
+COME CARICARE IL PROGETTO SU GITHUB (NUOVA REPOSITORY WINDOWS):
+------------------------------------------------------------------------
+All'interno di "Whisper Windows" trovi la sottocartella "GitHub" già pronta
+e ripulita con tutti i file sorgente, le icone e la documentazione per creare
+una repository GitHub dedicata alla versione Windows (separata da quella macOS):
+1. Vai su GitHub e crea una nuova repository (es. "WhisperStudio-Windows").
+2. Carica tutti i file contenuti nella sottocartella "GitHub":
+   - whisper_studio.py, WhisperPortable.spec, requirements.txt
+   - wispr.ico, wispr.png, app_icon_black.png
+   - README.md, ISTRUZIONI.txt, LICENSE, .gitignore
+3. Per distribuire l'applicazione già compilata agli utenti finali (senza
+   superare il limite di 100 MB del codice sorgente su GitHub), comprimi
+   "WhisperPortable.exe" e la cartella "_internal" in un archivio .zip
+   (es. "Whisper-Studio-v2.7.5-Windows.zip") e caricalo nella sezione
+   "Releases" della repository GitHub.
+
+------------------------------------------------------------------------
+COME CONDIVIDERE CON GLI AMICI:
+------------------------------------------------------------------------
+1. Comprimi la cartella "Whisper Windows" in un normale file .zip.
+2. Inviala a chi vuoi (tramite WeTransfer, Google Drive o chiavetta USB).
+3. Ai tuoi amici basterà estrarre la cartella e fare doppio clic su
+   "WhisperPortable.exe" (o eseguire "python whisper_studio.py")!
+========================================================================
